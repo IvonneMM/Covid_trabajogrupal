@@ -1,0 +1,22 @@
+```{r}
+library(rio)
+```
+
+```{r}
+Gobernabilidad="https://github.com/IvonneMM/COVID19grupo2oficial/raw/master/Data_Extract_From_Worldwide_Governance_Indicators%20(2)%20(1).xls"
+Gobernabilidad=import(Gobernabilidad)
+```
+
+```{r}
+names(Gobernabilidad)= c ("Pais", "Gobernabilidad")
+```
+
+```{r}
+Gobernabilidad$Gobernabilidad=as.numeric(Gobernabilidad$Gobernabilidad)
+```
+
+```{r}
+Gobernabilidad<-na.omit(Gobernabilidad)
+Gobernabilidad
+```
+

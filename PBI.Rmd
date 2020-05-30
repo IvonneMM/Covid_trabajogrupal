@@ -1,0 +1,82 @@
+```{r}
+#Limpieza de % del gasto de PBI
+```
+
+```{r}
+library(htmltab)
+```
+
+```{r}
+Linkpbi="https://www.cia.gov/library/publications/resources/the-world-factbook/fields/409.html"
+
+Link_path_pbi='//*[@id="fieldListing"]'
+```
+
+
+```{r}
+pbi= htmltab (doc = Linkpbi,which = Link_path_pbi)
+```
+
+```{r}
+names(pbi)
+names(pbi)= c ("Pais", "Porcentaje_PBI")
+```
+
+
+```{r}
+library(tidyr)
+```
+
+```{r}
+pbi=separate(pbi,Porcentaje_PBI,into=c("Porcentaje_PBI",'delete'), "\\%")[,-3]
+```
+
+```{r}
+table(pbi$pbi, useNA= 'always')
+```
+
+```{r}
+pbi<-na.omit(pbi)
+
+```
+
+```{r}
+str(pbi)
+```
+
+```{r}
+pbi$Porcentaje_PBI=as.numeric(pbi$Porcentaje_PBI)
+```
+
+```{r}
+pbi<-na.omit(pbi)
+```
+
+```{r}
+#Nos  quedarnos con los paises que son de europa y america 
+```
+
+
+```{r}
+library(rio)
+```
+
+```{r}
+Europa_America2="https://github.com/IvonneMM/COVID19grupo2oficial/raw/master/America%20y%20Europa3%20(3)%20(1)%20(1).xls"
+
+EuroAmer2=import(Europa_America2)
+```
+
+```{r}
+names(EuroAmer2)
+```
+
+```{r}
+names(EuroAmer2)= c ("Pais")
+```
+
+```{r}
+PBI_EA =merge(pbi,EuroAmer2,by.x='Pais', by.y='Pais') 
+head(PBI_EA)
+```
+
