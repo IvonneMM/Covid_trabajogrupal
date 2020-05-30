@@ -3,7 +3,7 @@ library(rio)
 ```
 
 ```{r}
-Gobernabilidad="https://github.com/IvonneMM/COVID19grupo2oficial/raw/master/Data_Extract_From_Worldwide_Governance_Indicators%20(2)%20(1).xls"
+Gobernabilidad="https://github.com/IvonneMM/Covid_trabajogrupal/raw/master/Data_Extract_From_Worldwide_Governance_Indicators%20(2)%20(1)%20(2).xls"
 Gobernabilidad=import(Gobernabilidad)
 ```
 

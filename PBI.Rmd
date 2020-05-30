@@ -62,7 +62,7 @@ library(rio)
 ```
 
 ```{r}
-Europa_America2="https://github.com/IvonneMM/COVID19grupo2oficial/raw/master/America%20y%20Europa3%20(3)%20(1)%20(1).xls"
+Europa_America2="https://github.com/IvonneMM/Covid_trabajogrupal/raw/master/America%20y%20Europa3%20(3)%20(1)%20(1)%20(4).xls"
 
 EuroAmer2=import(Europa_America2)
 ```
